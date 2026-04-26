@@ -6,3 +6,4 @@ clover.xml
 workspace.code-workspace
 .phpunit.result.cache
 .vscode
+tests/.env
