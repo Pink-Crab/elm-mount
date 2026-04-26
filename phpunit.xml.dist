@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<phpunit
+    bootstrap="tests/bootstrap.php"
+    backupGlobals="false"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    convertDeprecationsToExceptions="true"
+    >
+    <testsuites>
+        <testsuite name="core">
+            <directory prefix="Test_" suffix=".php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
+
+    <php>
+        <env name="WP_PHPUNIT__TESTS_CONFIG" value="tests/wp-config.php" />
+        <ini name="memory_limit" value="512M" />
+    </php>
+</phpunit>

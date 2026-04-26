@@ -1,0 +1,8 @@
+vendor
+wordpress
+composer.lock
+coverage-report
+clover.xml
+workspace.code-workspace
+.phpunit.result.cache
+.vscode
