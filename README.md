@@ -1,4 +1,18 @@
-# PinkCrab ElmMount
+# PinkCrab ElmMount #
+
+[![Latest Stable Version](https://poser.pugx.org/pinkcrab/elm-mount/v)](https://packagist.org/packages/pinkcrab/elm-mount)
+[![Total Downloads](https://poser.pugx.org/pinkcrab/elm-mount/downloads)](https://packagist.org/packages/pinkcrab/elm-mount)
+[![License](https://poser.pugx.org/pinkcrab/elm-mount/license)](https://packagist.org/packages/pinkcrab/elm-mount)
+[![PHP Version Require](https://poser.pugx.org/pinkcrab/elm-mount/require/php)](https://packagist.org/packages/pinkcrab/elm-mount)
+![GitHub contributors](https://img.shields.io/github/contributors/Pink-Crab/elm-mount?label=Contributors)
+![GitHub issues](https://img.shields.io/github/issues-raw/Pink-Crab/elm-mount)
+
+[![WP 6.6 [PHP8.0-8.4] Tests](https://github.com/Pink-Crab/elm-mount/actions/workflows/WP_6_6.yaml/badge.svg)](https://github.com/Pink-Crab/elm-mount/actions/workflows/WP_6_6.yaml)
+[![WP 6.7 [PHP8.0-8.4] Tests](https://github.com/Pink-Crab/elm-mount/actions/workflows/WP_6_7.yaml/badge.svg)](https://github.com/Pink-Crab/elm-mount/actions/workflows/WP_6_7.yaml)
+[![WP 6.8 [PHP8.0-8.4] Tests](https://github.com/Pink-Crab/elm-mount/actions/workflows/WP_6_8.yaml/badge.svg)](https://github.com/Pink-Crab/elm-mount/actions/workflows/WP_6_8.yaml)
+[![WP 6.9 [PHP8.0-8.4] Tests](https://github.com/Pink-Crab/elm-mount/actions/workflows/WP_6_9.yaml/badge.svg)](https://github.com/Pink-Crab/elm-mount/actions/workflows/WP_6_9.yaml)
+
+[![codecov](https://codecov.io/gh/Pink-Crab/elm-mount/graph/badge.svg?token=cWP0sQqG4G)](https://codecov.io/gh/Pink-Crab/elm-mount)
 
 Mount compiled Elm apps into WordPress admin pages, shortcodes and other surfaces. Handles the enqueue, the localized flags blob, and the REST nonce. Bundling your Elm is your job — this package takes the compiled `.js` and wires it into WordPress.
 
@@ -18,7 +32,7 @@ composer require pinkcrab/elm-mount
 
 ## Usage
 
-Build an `Elm_App` once with your script + flags, then either `render()` (echoes) or `parse()` (returns a string) from wherever WordPress asks you for output. This package does not wrap `add_submenu_page` / `add_shortcode` / `add_meta_box` — use WordPress's own APIs.
+Build an `Elm_App` once with your script + flags, then call `render()` (echoes) or `parse()` (returns a string) from any WordPress callback that produces output — admin page, shortcode, meta box, widget, REST handler, template part. The same `$app` works for all of them.
 
 ```php
 use PinkCrab\ElmMount\Elm_App;
