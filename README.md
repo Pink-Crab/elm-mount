@@ -32,7 +32,7 @@ composer require pinkcrab/elm-mount
 
 ## Usage
 
-Build an `Elm_App` once with your script + flags, then either `render()` (echoes) or `parse()` (returns a string) from wherever WordPress asks you for output. This package does not wrap `add_submenu_page` / `add_shortcode` / `add_meta_box` — use WordPress's own APIs.
+Build an `Elm_App` once with your script + flags, then call `render()` (echoes) or `parse()` (returns a string) from any WordPress callback that produces output — admin page, shortcode, meta box, widget, REST handler, template part. The same `$app` works for all of them.
 
 ```php
 use PinkCrab\ElmMount\Elm_App;
