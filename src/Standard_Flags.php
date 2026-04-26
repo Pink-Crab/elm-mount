@@ -82,20 +82,15 @@ class Standard_Flags {
 	 */
 	protected function current_user(): ?array {
 		$user = \wp_get_current_user();
-		if ( ! $user || 0 === $user->ID ) {
+		if ( 0 === $user->ID ) {
 			return null;
-		}
-
-		$capabilities = array();
-		if ( is_array( $user->allcaps ) ) {
-			$capabilities = array_values( array_keys( array_filter( $user->allcaps ) ) );
 		}
 
 		return array(
 			'id'           => (int) $user->ID,
 			'displayName'  => (string) $user->display_name,
 			'roles'        => array_values( (array) $user->roles ),
-			'capabilities' => $capabilities,
+			'capabilities' => array_keys( array_filter( $user->allcaps ) ),
 		);
 	}
 }
